@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nirnaya</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/feather/feather.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <script src="https://kit.fontawesome.com/32be665a75.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<div class="modal fade" id="create-report" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog report-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-none">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="row form-group">
+          <div class="col-md-12">
+                        <label>Header</label>
+                        <input type="text" class="form-control" placeholder="Header" aria-label="age">
+                      </div>
+            
+             <div class="col-md-12 mt-4">
+                        <label>Report Content</label>
+                       <textarea class="form-control report-content" placeholder="Report Content" ></textarea>
+                      </div>
+            <div class="col-md-12">
+             <h4 class="mt-4 mb-2">Choose Image</h4>
+                 <div class="row">
+                    
+            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                     
+                       <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                      
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                     
+                       <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+            
+            </div>
+            
+            </div>
+            
+            
+                      <div class="col-md-12">
+             <h4 class="mt-4 mb-2">Result Image</h4>
+                 <div class="row">
+                    
+            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/faces/user-image.jpg">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">James</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+               
+                
+            </div>
+            
+            </div>
+       
+            
+             <div class="col-md-12 mt-4">
+                        <label>Created By</label>
+                        <input type="text" class="form-control" placeholder="Created By" aria-label="age">
+                      </div>
+            
+            <div class="col-md-12 mt-4">
+                        <label>Created Date</label>
+                        <input type="date" class="form-control" placeholder="Created Date" aria-label="Created Date">
+                      </div>
+            
+            <div class="col-md-12 mt-4">
+               
+                            <button type="button" class="btn btn-primary btn-rounded btn-fw float-right" data-toggle="modal" data-target="#create-report" id="btn1">Publish</button>
+                 <button type="button"  data-dismiss="modal" class="btn btn-secondary btn-rounded btn-fw float-right mr-2 ">Cancel</button>
+                          </div>
+          
+          
+          </div>
+          
+      </div>
+     
+    </div>
+  </div>
+</div>
+      
+ 
+         
+    
+      
+      
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo mr-5" href="index.html">
+            <img src="images/nirnaya-logo.png" class="mr-2" alt="logo" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="index.html">
+            <img src="images/logo-icon.png" alt="logo" />
+          </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-search d-none d-lg-block">
+              <div class="input-group">
+                <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                  <span class="input-group-text" id="search">
+                    <i class="icon-search"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <img src="images/faces/face28.jpg" alt="profile" />
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                  <i class="ti-power-off text-primary"></i> Logout </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="enrollment.html">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Enrollment</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vehicle-list.html">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Vehicle Enrollment</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list-users.html">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">List Database</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="request-list.html">
+                <i class="fa-solid fa-list-ul  menu-icon"></i>
+                <span class="menu-title">Request List</span>
+              </a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="analyze01.html">
+                <i class="icon-contract menu-icon"></i>
+                <span class="menu-title">Analyze</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vew-result.html">
+                <i class="fa-solid fa-table-list menu-icon"></i>
+                <span class="menu-title">View Result</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Image</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Video</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Palm / Finger</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-retina-tab" data-toggle="pill" href="#pills-retina" role="tab" aria-controls="pills-retina" aria-selected="false">Retina</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                          <div class="row justify-center">
+                            <div class="col-md-3">
+                              <div class="variants">
+                                <div class="file">
+                                  <label for="input-file">
+                                    <div class="f-contain">
+                                      <img src="images/icons/image.png" class="upload-icon">
+                                      <p>Upload Image</p>
+                                    </div>
+                                  </label>
+                                  <input id="input-file" type="file">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row analyze-image-container">
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                      <input type="checkbox" class="image-text-box">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                        <input type="checkbox" class="image-text-box">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                        <input type="checkbox" class="image-text-box">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                        <input type="checkbox" class="image-text-box">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="button" onclick="" class="btn btn-primary btn-rounded btn-fw float-right mt-4">Process</button>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                          <div class="row justify-center">
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="variants">
+                                <div class="file">
+                                  <label for="input-file">
+                                    <div class="f-contain">
+                                      <img src="images/icons/video.png" class="upload-icon">
+                                      <p>Upload Video</p>
+                                    </div>
+                                  </label>
+                                  <input id="input-file" type="file">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row analyze-image-container">
+                            <div class="col-md-3">
+                              <video autoplay="autoplay" controls="controls" preload="preload" width="320" height="240">
+                                <source src="" type="video/mp4">
+                              </video>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="button" onclick="location.href='enrollment-image.html'" class="btn btn-primary btn-rounded btn-fw float-right mt-4">Process</button>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                          <div class="row">
+                            <div class="col-md-6 border-right">
+                              <div class="col-md-3 mt-1 mb-1 d-inline">
+                                <div class="variants">
+                                  <div class="file">
+                                    <label for="input-file">
+                                      <div class="f-contain">
+                                        <img src="images/icons/fingerprint.png" class="upload-icon">
+                                        <p>Upload Fingerprint</p>
+                                      </div>
+                                    </label>
+                                    <input id="input-file" type="file">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row analyze-image-container">
+                                <div class="col-md-4 mt-1 mb-1">
+                                  <div class="image-card-contaner">
+                                    <div class="card-nirnaya">
+                                      <img class="card-img-top" src="images/home-banner.png">
+                                      <div class="card-body-nirnaya">
+                                        <p class="card-text-nirnaya">unknown</p>
+                                            <input type="checkbox" class="image-text-box">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-3 mt-1 mb-1 d-inline">
+                                <div class="variants">
+                                  <div class="file">
+                                    <label for="input-file">
+                                      <div class="f-contain">
+                                        <img src="images/icons/hand-palm.png" class="upload-icon">
+                                        <p>Upload Palmprint</p>
+                                            <input type="checkbox" class="image-text-box">
+                                      </div>
+                                    </label>
+                                    <input id="input-file" type="file">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row analyze-image-container2">
+                                <div class="col-md-4 mt-1 mb-1">
+                                  <div class="image-card-contaner">
+                                    <div class="card-nirnaya">
+                                      <img class="card-img-top" src="images/home-banner.png">
+                                      <div class="card-body-nirnaya">
+                                        <p class="card-text-nirnaya">unknown</p>
+                                            <input type="checkbox" class="image-text-box">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="button" onclick="location.href='enrollment-image.html'" class="btn btn-primary btn-rounded btn-fw float-right mt-4">Process</button>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade show" id="pills-retina" role="tabpanel" aria-labelledby="pills-retina-tab">
+                          <div class="row justify-center">
+                            <div class="col-md-3">
+                              <div class="variants">
+                                <div class="file">
+                                  <label for="input-file">
+                                    <div class="f-contain">
+                                      <img src="images/icons/retina.png" class="upload-icon">
+                                      <p>Upload Retina</p>
+                                    </div>
+                                  </label>
+                                  <input id="input-file" type="file">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row analyze-image-container">
+                            <div class="col-md-3 mt-1 mb-1">
+                              <div class="image-card-contaner">
+                                <div class="card-nirnaya">
+                                  <img class="card-img-top" src="images/home-banner.png">
+                                  <div class="card-body-nirnaya">
+                                    <p class="card-text-nirnaya">unknown</p>
+                                        <input type="checkbox" class="image-text-box">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="button" onclick="location.href='enrollment-image.html'" class="btn btn-primary btn-rounded btn-fw float-right mt-4">Process</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 process-image-section">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="user-details">
+                            <div class="user-image">
+                              <img src="images/faces/user-image.jpg">
+                            </div>
+                            <ul class="user-content">
+                              <li>Name: <span class="user-details-highl">James</span>
+                              </li>
+                              <li>Age: <span class="user-details-highl">36</span>
+                              </li>
+                              <li>Contact Number: <span class="user-details-highl">9685234878</span>
+                              </li>
+                              <li>Aadhaar number: <span class="user-details-highl">12587896253215</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="user-details">
+                            <div class="user-image">
+                              <img src="images/faces/user-image.jpg">
+                            </div>
+                            <ul class="user-content">
+                              <li>Name: <span class="user-details-highl">James</span>
+                              </li>
+                              <li>Age: <span class="user-details-highl">36</span>
+                              </li>
+                              <li>Contact Number: <span class="user-details-highl">9685234878</span>
+                              </li>
+                              <li>Aadhaar number: <span class="user-details-highl">12587896253215</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="user-details">
+                            <div class="user-image">
+                              <img src="images/faces/user-image.jpg">
+                            </div>
+                            <ul class="user-content">
+                              <li>Name: <span class="user-details-highl">James</span>
+                              </li>
+                              <li>Age: <span class="user-details-highl">36</span>
+                              </li>
+                              <li>Contact Number: <span class="user-details-highl">9685234878</span>
+                              </li>
+                              <li>Aadhaar number: <span class="user-details-highl">12587896253215</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="user-details">
+                            <div class="user-image">
+                              <img src="images/faces/user-image.jpg">
+                            </div>
+                            <ul class="user-content">
+                              <li>Name: <span class="user-details-highl">James</span>
+                              </li>
+                              <li>Age: <span class="user-details-highl">36</span>
+                              </li>
+                              <li>Contact Number: <span class="user-details-highl">9685234878</span>
+                              </li>
+                              <li>Aadhaar number: <span class="user-details-highl">12587896253215</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      
+                        <div class="col-md-12">
+                            <button type="button"class="btn btn-primary btn-rounded btn-fw float-right mt-4" data-toggle="modal" data-target="#create-report" id="btn1">Create Report</button>
+                          </div>
+                          
+                    </div></div></div>
+                </div>
+              </div>
+              <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+          </div>
+          </div>
+          
+          <!-- container-scroller -->
+          <!-- plugins:js -->
+          <script src="vendors/js/vendor.bundle.base.js"></script>
+          <!-- endinject -->
+          <!-- Plugin js for this page -->
+          <script src="vendors/chart.js/Chart.min.js"></script>
+          <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+          <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+          <script src="js/dataTables.select.min.js"></script>
+          <!-- End plugin js for this page -->
+          <!-- inject:js -->
+          <script src="js/off-canvas.js"></script>
+          <script src="js/hoverable-collapse.js"></script>
+          <script src="js/template.js"></script>
+          <script src="js/settings.js"></script>
+          <script src="js/todolist.js"></script>
+          <!-- endinject -->
+          <!-- Custom js for this page-->
+          <script src="js/dashboard.js"></script>
+          <script src="js/Chart.roundedBarCharts.js"></script>
+          <!-- End custom js for this page-->
+      
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $('.modal-content').resizable({
+      //alsoResize: ".modal-dialog",
+      minHeight: 300,
+      minWidth: 300
+    });
+    $('.modal-dialog').draggable();
+
+    $('#create-report').on('show.bs.modal', function() {
+      $(this).find('.modal-body').css({
+        'max-height': '100%'
+      });
+    });
+  </script>
+      
+  </body>
+</html>

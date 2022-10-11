@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "jasmine": true
+    },
+    "globals": {
+        "VERSION": true,
+        "Promise": true
+    },
+    "parserOptions": { "ecmaVersion": 2020, "sourceType": "module" },
+    "extends": "eslint:recommended",
+    "rules": {
+        "curly": "error",
+        "no-trailing-spaces": "error",
+        "quotes": [ "error", "double" ],
+        "indent": [ "error", 4 ],
+        "semi": [ "error", "always" ],
+        "comma-spacing": [ "error", { "before": false, "after": true }],
+        "object-curly-spacing": [ "error", "always" ],
+        "no-multi-spaces": "error",
+        "array-bracket-spacing": [ "error", "always" ],
+        "keyword-spacing": "error",
+        "space-before-blocks": "error",
+        "no-multiple-empty-lines": [ "error", { "max": 1 } ],
+        "comma-dangle": [ "error", "always-multiline" ]
+    }
+}

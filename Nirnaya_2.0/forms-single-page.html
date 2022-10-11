@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nirnaya</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/feather/feather.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <script src="https://kit.fontawesome.com/32be665a75.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo mr-5" href="index.html">
+            <img src="images/nirnaya-logo.png" class="mr-2" alt="logo" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="index.html">
+            <img src="images/logo-icon.png" alt="logo" />
+          </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-search d-none d-lg-block">
+              <div class="input-group">
+                <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                  <span class="input-group-text" id="search">
+                    <i class="icon-search"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <img src="images/faces/face28.jpg" alt="profile" />
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                  <i class="ti-power-off text-primary"></i> Logout </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="enrollment.html">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Enrollment</span>
+              </a>
+            </li>
+              
+                 <li class="nav-item">
+              <a class="nav-link" href="vehicle-list.html">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Vehicle Enrollment</span>
+              </a>
+            </li>
+              
+            <li class="nav-item">
+              <a class="nav-link" href="list-users.html">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">List Database</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="request-list-create.html">
+                <i class="fa-solid fa-list-ul  menu-icon"></i>
+                <span class="menu-title">Request List</span>
+              </a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="analyze01.html">
+                <i class="icon-contract menu-icon"></i>
+                <span class="menu-title">Analyze</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vew-result.html">
+                <i class="fa-solid fa-table-list menu-icon"></i>
+                <span class="menu-title">View Result</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+       
+          
+        <!-- Modal -->
+        <div class="modal fade" id="analyz-popup" tabindex="-1" role="dialog" aria-labelledby="analyz-popupLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pb-80">
+                <p class="analyz-content">would you like to continue with</p>
+                <div class="two-btns">
+                  <a href="request-list.html" class="req-btn">Request List</a>
+                  <a href="analyze.html" class="anal-btn"> Analyze Upload Here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+          
+          
+          
+          
+          
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-12 grid-margin">
+                <div class="row">
+                  <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                    <h3 class="font-weight-bold">Sign Up Your User Account</h3>
+                    <h6 class="font-weight-normal mb-0">Fill all form field to go to next step</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+              
+              <fieldset id="personal-fieldset">
+               <div class="row">
+                <form class="w-100">
+                    
+                <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul id="progressbar">
+                        <li class="active" id="person">
+                          <strong>Personal</strong>
+                        </li>
+                        <li id="image-upload" class="">
+                          <strong>Image</strong>
+                        </li>
+                        <li id="biometric">
+                          <strong>Biometric</strong>
+                        </li>
+                        <li id="retina">
+                          <strong>Retina</strong>
+                        </li>
+                        <li id="finish">
+                          <strong>Finish</strong>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <button class="btn btn-sm btn-outline-primary dropdown-toggle name-spec" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mr.</button>
+                              <div class="dropdown-menu" style="">
+                                <a class="dropdown-item" href="#">Mr.</a>
+                                <a class="dropdown-item" href="#">Master</a>
+                                <a class="dropdown-item" href="#">Mrs.</a>
+                                <a class="dropdown-item" href="#">Miss</a>
+                              </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="First Name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Mobile Number">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Alternative Number">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-4">
+                            <select class="form-control">
+                              <option selected>Male</option>
+                              <option>Female</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4">
+                            <input type="date" class="form-control" placeholder="Date of Birth" aria-label="Date of birth">
+                          </div>
+                          <div class="col-md-4">
+                            <input type="number" class="form-control" placeholder="Age" aria-label="age">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-4">
+                            <select class="form-control">
+                              <option selected>B+</option>
+                              <option>AB+</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4">
+                            <input type="number" class="form-control" placeholder="Weight">
+                          </div>
+                          <div class="col-md-4">
+                            <input type="number" class="form-control" placeholder="Height">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Aadhar">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Address line 1">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Address line 2">
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Pincode">
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="District">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="State" aria-label="State">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="button" onclick="progressForward('personal-fieldset')" class="btn btn-primary btn-rounded btn-fw float-right">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                </form>
+             </div>
+            </fieldset>
+              
+                   <fieldset id="image-fieldset">
+                   
+                       <div class="row">
+                <form class="w-100">
+                    
+                      <!-- Modal -->
+        <!--  upload-left-face-->
+        <div class="modal fade" id="upload-left-face" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- upload-left-face -->
+                    
+               
+         <!-- Upload Center Face -->
+        <div class="modal fade" id="upload-center-face" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Upload Center Face -->
+                    
+        
+                    <!-- Upload Right Face -->
+                    <div class="modal fade" id="upload-right-face" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Face -->
+                    
+                    
+                    <!-- upload-left-thumb -->
+                    <div class="modal fade" id="upload-left-thumb" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-left-thumb -->
+                    
+                    
+                    <div class="modal fade" id="upload-left-index-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-left-index-finger -->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-left-middle-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-left-middle-finger -->
+                    
+                    
+                    <div class="modal fade" id="upload-left-ring-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Left Ring Finger -->
+                    
+                    
+                    
+                    
+                    
+                    
+           <div class="modal fade" id="upload-left-little-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-left-little-finger -->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-left-palm" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Left Palm -->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-right-thumb" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Thumb -->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-right-index-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-right-index-finger-->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-right-middle-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Middle Finger-->
+                    
+                    
+                    <div class="modal fade" id="upload-right-ring-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Ring Finger-->
+                    
+                    
+                    <div class="modal fade" id="upload-right-little-finger" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Little Finger-->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-right-palm" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Little Finger-->
+                    
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-left-eye" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- upload-left-eye-->
+                    
+                    
+                    
+                    <div class="modal fade" id="upload-right-eye" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Right Eye-->
+                    
+                    
+                    <div class="modal fade" id="upload-both-eye" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Take a Picture</button>
+                      <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload Image</button>
+                          <input type="file" name="filename">
+                        </div>
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    <!-- Upload Both Eye-->
+                    
+                    
+                    
+                <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul id="progressbar">
+                        <li class="active" id="person">
+                          <strong>Personal</strong>
+                        </li>
+                        <li id="image-upload" class="active">
+                          <strong>Image</strong>
+                        </li>
+                        <li id="biometric">
+                          <strong>Biometric</strong>
+                        </li>
+                        <li id="retina">
+                          <strong>Retina</strong>
+                        </li>
+                        <li id="finish">
+                          <strong>Finish</strong>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row justify-center">
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-left-face">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/left-face.png" class="upload-icon">
+                                    <p>Upload Left Face</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-center-face">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/center-face.png" class="upload-icon">
+                                    <p>Upload Center Face</p>
+                                    <a href="#" class="upload-count" data-toggle="modal" data-target="#upload-center-face">02</a>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-right-face">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/right-face.png" class="upload-icon">
+                                    <p>Upload Right Face</p>
+                                    <a href="#" class="upload-count" data-toggle="modal" data-target="#upload-right-face">01</a>
+                                  </div>
+                                </label>
+                               </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="button" onclick="progressForward('-fieldset')" class="btn btn-primary btn-rounded btn-fw float-right">Next</button>
+                        <button type="button" onclick="location.href='enrollment.html'" class="btn btn-secondary btn-rounded btn-fw float-right mr-2">Preview</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                
+                </form>
+              
+            </div>
+                  
+              
+                   </fieldset>
+              
+              
+              <fieldset id="biometric-fieldset">
+              
+              <div class="row">
+                <form class="w-100">
+                    
+                    <div class="modal fade" id="upload-image-modal" tabindex="-1" role="dialog" aria-labelledby="upload-image-modalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Scan Here</button>
+                           <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload</button>
+                          <input type="file" name="filename">
+                        </div>
+                  
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+             
+         
+            
+             
+            
+                
+             
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- upload-image -modal -->
+                    
+                <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul id="progressbar">
+                        <li class="active" id="person">
+                          <strong>Personal</strong>
+                        </li>
+                        <li id="image-upload" class="active">
+                          <strong>Image</strong>
+                        </li>
+                        <li id="biometric" class="active">
+                          <strong>Biometric</strong>
+                        </li>
+                        <li id="retina">
+                          <strong>Retina</strong>
+                        </li>
+                        <li id="finish">
+                          <strong>Finish</strong>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row justify-center">
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-left-thumb">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/left-thumb.png" class="upload-icon">
+                                    <p>Upload Left Thumb</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-left-index-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/index-figner-left.png" class="upload-icon">
+                                    <p>Upload Left Index Finger</p>
+                                    <a href="#"  class="upload-count">12</a>
+                                  </div>
+                                </label>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-left-middle-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/middile-finger-left.png" class="upload-icon">
+                                    <p>Upload Left Middle Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row justify-center">
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-left-ring-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/ring-finger.png" class="upload-icon">
+                                    <p>Upload Left Ring Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-left-little-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/small-finger-left.png" class="upload-icon">
+                                    <p>Upload Left Little Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-left-palm">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/palm-left.png" class="upload-icon">
+                                    <p>Upload Left Palm</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 next-sec mt-3">
+                        <div class="row justify-center mt-3">
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-right-thumb">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/right-thumb.png" class="upload-icon">
+                                    <p>Upload Right Thumb</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-right-index-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/index-figner.png" class="upload-icon">
+                                    <p>Upload Right Index Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-right-middle-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/middile-finger.png" class="upload-icon">
+                                    <p>Upload Right Middle Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row justify-center">
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-right-ring-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/ring-finger-right.png" class="upload-icon">
+                                    <p>Upload Right Ring Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-right-little-finger">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/small-finger.png" class="upload-icon">
+                                    <p>Upload Right Little Finger</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-right-palm">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/palm-right.png" class="upload-icon">
+                                    <p>Upload Right Palm</p>
+                                    <a href="#" class="upload-count">12</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="button" onclick="location.href='retina.html'" class="btn btn-primary btn-rounded btn-fw float-right">Next</button>
+                        <button type="button" onclick="location.href='enrollment-image.html'" class="btn btn-secondary btn-rounded btn-fw float-right mr-2">Preview</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                </form>
+              
+            </div>
+              
+              
+              </fieldset>
+              
+              
+              <fieldset id="retina-fieldset" >
+              <div class="row">
+                <form class="w-100">
+                    
+            <div class="modal fade" id="upload-image-modal" tabindex="-1" role="dialog" aria-labelledby="upload-image-modalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-none">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body pt-0">
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="popup-header">
+                      <button type="button" onclick="'" class="btn btn-primary btn-rounded btn-fw mr-2">Scan Here</button>
+                           <div class="upload-btn-wrapper">
+                          <button class="btn-secondary btn-rounded btn-fw create-upload-btn">Upload</button>
+                          <input type="file" name="filename">
+                        </div>
+                  
+                      
+                      </div>
+                      
+                      </div>
+                  </div>
+                  
+                <div class="row">
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="col-md-3 mb-2">
+                    <img src="images/home-banner.png" class="img-fluid">
+                    <div class="image-actions">
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash-can" title="Delete image"></i>
+                      </button>
+                      <div class="upload-btn-wrapper">
+                        <button class=" change-image-btn">
+                          <i class="fa-solid fa-file-import" title="change Image"></i>
+                        </button>
+                        <input type="file" name="filename" title="Change Image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                    
+                    <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul id="progressbar">
+                        <li class="active" id="person">
+                          <strong>Personal</strong>
+                        </li>
+                        <li id="image-upload" class="active">
+                          <strong>Image</strong>
+                        </li>
+                        <li id="biometric" class="active">
+                          <strong>Biometric</strong>
+                        </li>
+                        <li id="retina" class="active">
+                          <strong>Retina</strong>
+                        </li>
+                        <li id="finish">
+                          <strong>Finish</strong>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row justify-center">
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-left-eye">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/left-eye.png" class="upload-icon">
+                                    <p>Upload Left Eye</p>
+                                    <a href="#" class="upload-count">02</a>
+                                  </div>
+                                </label>
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants" data-toggle="modal" data-target="#upload-right-eye">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/right-eye.png" class="upload-icon">
+                                    <p>Upload Right Eye</p>
+                                    <a href="#" class="upload-count">03</a>
+                                  </div>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="variants"  data-toggle="modal" data-target="#upload-both-eye">
+                              <div class='file'>
+                                <label>
+                                  <div class="f-contain">
+                                    <img src="images/icons/2eyes.png" class="upload-icon">
+                                    <p>Upload Both Eye</p>
+                                    <a href="#" class="upload-count">04</a>
+                                  </div>
+                                </label>
+                              
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="button" onclick="location.href='finish.html'" class="btn btn-primary btn-rounded btn-fw float-right">Next</button>
+                        <button type="button" onclick="location.href='biometric.html'" class="btn btn-secondary btn-rounded btn-fw float-right mr-2">Preview</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                </form>
+              
+            </div>
+              
+              
+              </fieldset>
+              
+              
+              <fieldset id="finish-fieldset">
+              
+                  <div class="row">
+                <form class="w-100">
+                <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      <ul id="progressbar">
+                        <li class="active" id="person">
+                          <strong>Personal</strong>
+                        </li>
+                        <li id="image-upload" class="active">
+                          <strong>Image</strong>
+                        </li>
+                        <li id="biometric" class="active">
+                          <strong>Biometric</strong>
+                        </li>
+                        <li id="retina" class="active">
+                          <strong>Retina</strong>
+                        </li>
+                        <li id="finish" class="active">
+                          <strong>Finish</strong>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row justify-center">
+                          <div class="col-lg-5 col-md-6">
+                            <div class="finish-box">
+                              <i class="fa-solid fa-check"></i>
+                              <p> Enrollment Successfully Completed! </p>
+                              <button type="button" class="btn btn-primary btn-rounded btn-fw">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                
+                </form>
+              
+            </div>
+                  
+              
+              </fieldset>
+              
+              
+              
+              
+              
+              
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <script src="js/userAccountProgress.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>
